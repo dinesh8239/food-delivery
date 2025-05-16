@@ -1,0 +1,57 @@
+<div
+  class="d-flex align-items-center justify-content-center"
+  style="
+    background: url('https://t3.ftcdn.net/jpg/03/55/60/70/240_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+  "
+>
+  <form
+    (ngSubmit)="onRegister()"
+    class="bg-white p-4 rounded shadow-sm"
+    style="max-width: 500px; width: 100%;"
+  >
+    <h2 class="mb-4 text-center">Register</h2>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="name"
+        name="name"
+        class="form-control"
+        placeholder="Enter your name"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="email"
+        name="email"
+        class="form-control"
+        placeholder="Enter your email"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        class="form-control"
+        placeholder="Enter your password"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Register</button>
+  </form>
+</div>

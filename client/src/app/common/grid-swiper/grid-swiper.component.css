@@ -1,0 +1,39 @@
+ 
+  
+  
+  
+  .itemCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .dealcarousel {
+    display: flex;
+    overflow-x: scroll;
+    width: 1470px;
+    align-items: flex-start;
+    background-color: #fae859;
+    gap: 10px;
+    
+  }
+  
+  .dealcarousel a {
+    text-decoration: none;
+    color: rgb(59, 59, 59);
+    
+  }
+  
+  .dealcarousel::-webkit-scrollbar {
+    display: none;
+  }
+  .img {
+    height: auto
+  }
+  
+  .dealCar {
+    margin-top: 20px;
+    background-color: #fae859;
+padding-bottom: 5px;
+  }

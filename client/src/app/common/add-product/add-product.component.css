@@ -1,0 +1,54 @@
+/* Background image on full page */
+body {
+    background-image: url('/assets/img/add product.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centered form container */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Form input spacing */
+.form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Green submit button */
+button[type="submit"] {
+    background-color: #2e7d32 !important;
+    border-color: #2e7d32 !important;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 0;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1b5e20 !important;
+}
+
+/* Optional: loader text style */
+button[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+}

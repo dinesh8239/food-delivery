@@ -1,0 +1,32 @@
+<div id="food-selection">
+    <div id="veg" class="food-category">
+        <!-- <h2><b>Non-Veg Options</b></h2> -->
+        <div class="food-item" *ngFor="let veg of vegFoods;let i = index "> 
+            <img src='{{veg.image}}' alt="Crispy Veg Burger">
+            <p><b>{{veg.name}}</b></p>
+            <p class="price" id="crispy-veggie-price">₹{{veg.price}}</p>
+
+            <div class="button-container">
+                <button class="minus-btn" (click)="decrement(veg._id)">-</button>
+                
+                <button class="add-btn" (click)="addToCart(veg._id)">
+                  Add
+                </button>
+              
+                <button class="plus-btn" (click)="increment(veg._id)">+</button>
+            </div>
+            
+            
+        </div>
+ 
+
+
+    </div>
+
+
+    <!-- <div id="cart">
+        <h3>Your Cart</h3>
+        <div id="cart-items"></div>
+        <p>Total: ₹<span id="total-price">0</span></p>
+        <button id="stop" onclick="checkout()">Checkout</button>
+    </div> -->

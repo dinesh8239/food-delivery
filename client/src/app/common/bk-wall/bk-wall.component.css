@@ -1,0 +1,149 @@
+/* Wrapper and Sections */
+.bk-wall__pg-wrapper {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .bk-wall__section-layout {
+    margin: 40px 0;
+  }
+  
+  /* Section Titles */
+  .section-title__title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d72300;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* About Us Block */
+  .about-us {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .about-us__image,
+  .about-us__content {
+    flex: 1 1 45%;
+    max-width: 600px;
+  }
+  
+  .about-us__description {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .about-us__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #111;
+  }
+  
+  /* Video Thumbnails */
+  .video_thumbnail {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .video_thumbnail:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+  
+  .video_thumbnail__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+  
+  /* Sliders */
+  .component-slider {
+    position: relative;
+  }
+  
+  .slider-container {
+    overflow-x: auto;
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .slider-content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .bk-wall__read-more__content {
+    flex: 0 0 auto;
+    width: 200px;
+  }
+  
+  /* Arrows */
+  .htl-scroll__arrow {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .htl-scroll__arrow_disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  
+  .htl-scroll__icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Banners */
+  .bk-wall-banner {
+    flex: 0 0 auto;
+    width: 300px;
+  }
+  
+  .u_width_height {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .u_bor_rad_6px {
+    border-radius: 12px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-us {
+      flex-direction: column;
+    }
+  
+    .about-us__image,
+    .about-us__content {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  
+    .bk-wall__read-more__content {
+      width: 150px;
+    }
+  
+    .bk-wall-banner {
+      width: 250px;
+    }
+  }
+  

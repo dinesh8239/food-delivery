@@ -1,0 +1,77 @@
+<app-swiper></app-swiper>
+<app-nav-bar (sidebar)="openSidebar()"></app-nav-bar>
+
+<section menu-bar class="menu-section container mb-3">
+    <div class="section-title takeaway undefined">
+        <h2 class="section-title__title">OUR MENU</h2>
+
+    </div>
+
+    <div class="menu-scroll-container">
+        
+        <div class="food-card" [routerLink]="['/food','Korean Spicy Fest']">
+            <img src="assets/img/korean spicy festpng.jpeg" alt="Korean Spicy Fest" />
+            <h5>korean spicy<br />fest</h5>
+            
+        </div>
+
+        <div class="food-card" [routerLink]="['/food','non-veg']">
+            <img src="assets/img/Non-Veg.jpeg" alt="Non-Veg" />
+            <h5>Non-Veg</h5>
+        </div>
+
+        <div class="food-card bg" [routerLink]="['/food', 'Bk Cafe']">
+            <img src="assets/img/Bk Cafe.jpeg" alt="Bk Cafe" />
+            <h5>Bk Cafe</h5>
+        </div>
+
+        <div class="food-card bg" [routerLink]="['/food','cold-drink']">
+            <img src="assets/img/cold-drinks.jpeg" alt="Cold Drinks" />
+            <h5>Cold-drinks</h5>
+        </div>
+
+        <div class="food-card" [routerLink]="['/food','veg']">
+            <img src="assets/img/Veg.jpeg" alt="Veg" />
+            <h5>Veg</h5>
+        </div>
+
+        <div class="food-card" [routerLink]="['/food','dessert']">
+            <img src="assets/img/dessert.jpeg" alt="Dessert" />
+            <h5>Dessert</h5>
+        </div>
+
+        <div class="food-card" [routerLink]="['/food','Snacks']">
+            <img src="assets/img/snaks.jpeg" alt="Snacks" />
+            <h5>Snacks</h5>
+        </div>
+
+        <div class="food-card" [routerLink]="['/food','Whopper']">
+            <img src="assets/img/whopper.jpeg" alt="Whopper" />
+            <h5>Whopper</h5>
+        </div>
+
+        <div class="food-card" [routerLink]="['/food','bk-recommended']">
+            <img src="assets/img/bk recomend.jpeg" alt="BK Recommended" />
+            <h5>BK Recommend</h5>
+        </div>
+
+        <div class="food-card" [routerLink]="['/food','new-premium-burgers']">
+            <img src="assets/img/New premimum burger.jpeg" alt="New Premium Burgers" />
+            <h5>New Premium Burgers</h5>
+        </div>
+    </div>
+</section>
+
+
+<!-- <app-grid-swiper></app-grid-swiper> -->
+<!-- <app-swiper></app-swiper> -->
+<app-add></app-add>
+<app-card></app-card>
+
+<!-- <app-watches></app-watches> -->
+
+<a href="/bk-wall">
+    <img src="assets/img/burger king big logo.jpg" alt="bk-wall" class="wall-banner rounded" />
+  </a>
+  
+  

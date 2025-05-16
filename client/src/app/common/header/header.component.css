@@ -1,0 +1,67 @@
+  .cart{
+    position: relative;
+  }
+  .de{
+    font-family: 'Bowlby One SC', sans-serif;
+    color: #e76f00; /* Burger King orange */
+    font-size: 24px;
+    letter-spacing: 0px;
+    font-weight: 400;
+  
+  
+  }
+  
+  .nav-menu__icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .nav-menu__name {
+    font-size: large;
+    font-weight: bold;
+  
+  }
+
+  .navbar-nav .nav-item.position-relative {
+    cursor: pointer;
+  }
+  
+  .navbar-nav .nav-item.position-relative .nav-link {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    background-color: black;
+    color: #fae859;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+  }
+  
+  .bg-brown {
+    background-color: #5B2C06 !important;
+  }
+  
+ /* Default state */
+.custom-toggle {
+  background-color: #EE7700; /* brown */
+  border-color: #EE7700;
+}
+
+/* When toggled ON */
+.custom-toggle:checked {
+  background-color: #6B4226 !important;  /* orange */
+  border-color: #6B4226 !important;
+}
+
+/* Optional: Smooth transition */
+.custom-toggle {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}

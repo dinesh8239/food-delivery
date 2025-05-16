@@ -1,0 +1,23 @@
+.cardsec{
+    top: 70%;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    margin-top: -20%;
+    border-radius: 0 !important;
+  }
+  
+  .images{
+    width: 100%;
+    height: 100vh;
+    padding: auto;
+
+  }
+  .card{
+    border-radius: 0 !important;
+  }
+  .img-fluid{
+    width: 100%;
+    height: 100px;
+    padding: auto;
+  }

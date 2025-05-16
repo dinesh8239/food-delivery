@@ -1,0 +1,87 @@
+form {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  form div {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  .order {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-left: 4px solid #007bff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order p {
+    margin: 0.25rem 0;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    padding: 0.25rem 0;
+    border-bottom: 1px dashed #ddd;
+  }
+  
+  h2 {
+    color: #333;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid #eee;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  

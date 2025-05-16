@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #232f3e; padding: 5px 10px;">
+    <div class="container-fluid">
+
+        <!-- Toggler for small screens -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#subNavbar"
+            aria-controls="subNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="subNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="javascript:;" (click)="OpenSideBar()">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" [routerLink]="['/food','veg']">Veg</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" [routerLink]="['/food','non-veg']">Non-veg</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" [routerLink]="['/food','cold-drink']">Cold-drinks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" [routerLink]="['/food','dessert']">Dessert</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" [routerLink]="['/food','Snacks']">Snacks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" [routerLink]="['/food','Korean Spicy Fest']">korean spicy fest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" [routerLink] ="['/food', 'Bk Cafe']">Bk Cafe</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link text-white" href="/add">Add Product</a>
+                </li> -->
+
+               
+                  
+
+
+
+            </ul>
+        </div>
+
+    </div>
+</nav>

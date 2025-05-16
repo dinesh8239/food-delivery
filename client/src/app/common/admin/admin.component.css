@@ -1,0 +1,87 @@
+/* General heading styles */
+h2 {
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  /* List styling */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+  
+  /* Default button styling */
+  button {
+    margin-left: 10px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Background image styling */
+  .bg {
+    background-image: url('/assets/img/admin.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px 20px; /* spacing around content */
+    box-sizing: border-box;
+  }
+  
+  /* Admin banner */
+  .admin-welcome-banner {
+    /* background: linear-gradient(to right, #6a11cb, #2575fc); */
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+  }
+  
+  .admin-welcome-banner h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .admin-welcome-banner p {
+    margin-top: 8px;
+    font-size: 1.1em;
+    color: #e0e0e0;
+  }
+  
+  /* Button container centered */
+  .menu-button-container {
+    text-align: center;
+  }
+  
+  /* Styled orange button */
+  .add-product-button {
+    background-color: #f57c00;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 999px;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    font-family: 'Arial Black', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .add-product-button:hover {
+    background-color: #e65100;
+  }
+  

@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+body{   
+    background-color: #eeece0;
+ 
+}
+
+.itemCard {
+    display: grid;
+    place-items: center;
+    width: 250px;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    margin-left: 20px;
+  }
+  
+  .itemCard img {
+    width: fit-content;
+    object-fit: contain;
+  }
+  
+  .itemCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dealcarousel {
+    display: flex;
+    overflow-x: scroll;
+    padding: 20px;
+    width: 1470px;
+    align-items: flex-end;
+    background-color: white;
+  }
+  
+  .dealcarousel a {
+    text-decoration: none;
+    color: rgb(59, 59, 59);
+  }
+  
+  .dealcarousel::-webkit-scrollbar {
+    display: none;
+  }
+  .itemCard img {
+    height: 200px;
+    width: 200px;
+  }
+  
+  .dealCar {
+    padding: 10px;
+  }
+
+  
