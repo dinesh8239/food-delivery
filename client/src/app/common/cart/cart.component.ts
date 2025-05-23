@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; // ✅ Import Router
+import { Router } from '@angular/router'; 
 import { CartService } from '../services/cart.service';
 import { CommonModule } from '@angular/common';
 
@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private router: Router // ✅ Inject Router
+    private router: Router 
   ) {}
 
   ngOnInit(): void {
@@ -60,13 +60,13 @@ export class CartComponent implements OnInit {
     this.cartService.removeFromCart(foodId).subscribe({
       next: () => {
         this.fetchCart();
-        this.cartService.refreshCartCount(); // 🔁 update header count
+        this.cartService.refreshCartCount(); // update header count
       },
       error: (err) => console.error('Error removing item:', err)
     });
   }
 
-  // ✅ Navigate to OrdersComponent on "Place Order"
+  //  Navigate to OrdersComponent on "Place Order"
   goToOrders() {
     this.router.navigate(['/orders']);
   }

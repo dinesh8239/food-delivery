@@ -7,9 +7,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class CartService {
   private cartCountSubject = new BehaviorSubject<number>(0);
-  cartCount$ = this.cartCountSubject.asObservable(); // Exposed observable
+  cartCount$ = this.cartCountSubject.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.refreshCartCount(); // Automatically load count on service init
+  }
 
   getCartStatus(): Observable<any> {
     return this.http.get<any>('http://localhost:5000/api/cart');
@@ -24,14 +26,28 @@ export class CartService {
     return this.http.delete(`http://localhost:5000/api/cart/remove/${foodId}`);
   }
 
-  // 🔁 Call this after add/remove/update
   refreshCartCount(): void {
     this.getCartStatus().subscribe({
       next: (res) => {
-        const count = res?.data?.items?.reduce((acc: number, item: any) => acc + item.quantity, 0) || 0;
+        const count = res?.data?.items?.reduce(
+          (acc: number, item: any) => acc + (item.quantity || 1), 0
+        ) || 0;
         this.cartCountSubject.next(count);
       },
-      error: () => this.cartCountSubject.next(0)
+      error: () => {
+        this.cartCountSubject.next(0);
+      }
     });
+  }
+
+  incrementCartCount(by: number = 1): void {
+    const current = this.cartCountSubject.value;
+    this.cartCountSubject.next(current + by);
+  }
+
+  decrementCartCount(by: number = 1): void {
+    const current = this.cartCountSubject.value;
+    const newCount = Math.max(0, current - by);
+    this.cartCountSubject.next(newCount);
   }
 }

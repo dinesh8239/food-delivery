@@ -1,32 +1,95 @@
-<div id="food-selection">
-    <div id="veg" class="food-category">
-        <!-- <h2><b>Non-Veg Options</b></h2> -->
-        <div class="food-item" *ngFor="let veg of vegFoods;let i = index "> 
-            <img src='{{veg.image}}' alt="Crispy Veg Burger">
-            <p><b>{{veg.name}}</b></p>
-            <p class="price" id="crispy-veggie-price">₹{{veg.price}}</p>
 
-            <div class="button-container">
-                <button class="minus-btn" (click)="decrement(veg._id)">-</button>
-                
-                <button class="add-btn" (click)="addToCart(veg._id)">
-                  Add
-                </button>
-              
-                <button class="plus-btn" (click)="increment(veg._id)">+</button>
-            </div>
-            
+<section menu-bar class="menu-section container  p-0 mb-0" >
+    <div class="">
+        <h2 class="section-title__title">OUR MENU</h2>
+
+    </div >
+
+
+
+    <div class="menu-scroll-container p-0">
+        
+        <div class=" m-0 food-card1" [routerLink]="['/food','Korean Spicy Fest']">
+            <img src="assets/img/korean spicy festpng.jpeg" alt="Korean Spicy Fest" />
+            <p>korean spicy fest</p>
             
         </div>
- 
 
+        <div class=" food-card1" [routerLink]="['/food','non-veg']">
+            <img src="assets/img/Non-Veg.jpeg" alt="Non-Veg" />
+            <h5>Non-Veg</h5>
+        </div>
+
+        <div class=" food-card1 bg" [routerLink]="['/food', 'Bk Cafe']">
+            <img src="assets/img/Bk Cafe.jpeg" alt="Bk Cafe" />
+            <h5>Bk Cafe</h5>
+        </div>
+
+        <div class=" food-card1 bg" [routerLink]="['/food','cold-drink']">
+            <img src="assets/img/cold-drinks.jpeg" alt="Cold Drinks" />
+            <h5>Cold-drinks</h5>
+        </div>
+
+        <div class=" food-card1" [routerLink]="['/food','veg']">
+            <img src="assets/img/Veg.jpeg" alt="Veg" />
+            <h5>Veg</h5>
+        </div>
+
+        <div class=" food-card1" [routerLink]="['/food','dessert']">
+            <img src="assets/img/dessert.jpeg" alt="Dessert" />
+            <h5>Dessert</h5>
+        </div>
+
+        <div class=" food-card1" [routerLink]="['/food','Snacks']">
+            <img src="assets/img/snaks.jpeg" alt="Snacks" />
+            <h5>Snacks</h5>
+        </div>
+
+        <div class=" food-card1" [routerLink]="['/food','Whopper']">
+            <img src="assets/img/whopper.jpeg" alt="Whopper" />
+            <h5>Whopper</h5>
+        </div>
+
+        <div class=" food-card1" [routerLink]="['/food','bk-recommended']">
+            <img src="assets/img/bk recomend.jpeg" alt="BK Recommended" />
+            <h5>BK Recommend</h5>
+        </div>
+
+        <div class=" food-card1" [routerLink]="['/food','new-premium-burgers']">
+            <img src="assets/img/New premimum burger.jpeg" alt="New Premium Burgers" />
+            <h5>New Premium Burgers</h5>
+
+        </div>
 
     </div>
+    <hr class="p-0 m-0"  >
+
+</section>
 
 
-    <!-- <div id="cart">
-        <h3>Your Cart</h3>
-        <div id="cart-items"></div>
-        <p>Total: ₹<span id="total-price">0</span></p>
-        <button id="stop" onclick="checkout()">Checkout</button>
-    </div> -->
+<div style="padding-left: 7.5%;" class="mt-5 mb-5">
+    <h2><b>{{ category }}</b></h2>
+  </div>
+  
+  <div id="food-selection">
+    <div id="veg" class="food-category">
+      <div class="food-item" *ngFor="let veg of vegFoods">
+        <img [src]="veg.image" [alt]="veg.name" />
+        <p><b>{{ veg.name }}</b></p>
+        <p class="price">₹{{ veg.price }}</p>
+  
+        <div class="button-container">
+          <ng-container *ngIf="quantities[veg._id]; else addButton">
+            <button class="minus-btn" (click)="decrement(veg)">-</button>
+            <button class="qty-btn">{{ quantities[veg._id] }}</button>
+            <button class="plus-btn" (click)="increment(veg)">+</button>
+          </ng-container>
+  
+          <ng-template #addButton>
+            <button class="add-btn" (click)="addToCart(veg)">Add</button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+  

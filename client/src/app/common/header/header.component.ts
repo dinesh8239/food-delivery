@@ -11,7 +11,7 @@ import { Router } from '@angular/router';  // Import Router
   imports: [CommonModule]
 })
 export class HeaderComponent implements OnInit {
-  cartCount = 0;
+  cartCount: number = 0;
 
   constructor(private cartService: CartService, private router: Router) {}
 
