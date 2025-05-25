@@ -7,60 +7,71 @@ const Cloudinary = require("../config/cloudinary.js")
 
 
 exports.createFood = asyncHandler(async (req, res) => {
-    try {
-        const { name, category, price } = req.body
-        const image = req.file?.path; // Cloudinary image URL
+  try {
+    const { name, category, price, orderType } = req.body;
+    console.log("Body:", req.body);
 
-        if (!name || !category || !price || !image) {
-            throw new ApiError(400, "All fields are required")
-        }
+console.log("File:", req.file);
+    
 
-        const food = await Food.create({
-            name,
-            price,
-            category,
-            image
-        });
-        return res.status(201)
-            .json(
-                new ApiResponse(
-                    "Food Item created successfully",
-                    food
-                )
-            )
-    } catch (error) {
-        throw new ApiError(500, error?.message || "something went wrong while creating Food Item")
+    const image = req.file?.path; // Cloudinary image URL
+
+    if (!name || !category || !price || !image || !orderType) {
+      throw new ApiError(400, "All fields are required including orderType");
     }
+
+    // Ensure orderType is always an array
+    // const parsedOrderType = Array.isArray(orderType) ? orderType : orderType;
+
+    const food = await Food.create({
+      name,
+      price,
+      category,
+      image,
+      orderType
+    });
+
+    return res.status(201).json(
+      new ApiResponse("Food Item created successfully", food)
+    );
+  } catch (error) {
+    throw new ApiError(500, error?.message || "Something went wrong while creating Food Item");
+  }
 });
 
+
 // Get  Items
-exports.getAllFoods = asyncHandler (async(req, res) => {
-    try {
-      const { page = 1,  category } = req.query;
-  
-      const query = {};
-  
-    
-      if (category) {
-        query.category = category; // Match exact category
-      }
-  
-      const total = await Food.countDocuments(query);
-      const foods = await Food.find(query)
-        .skip(page - 1) 
-        // .limit(parseInt(limit));
-  
-      res.status(200).json({
-        success: true,
-        currentPage: +page,
-        totalPages: Math.ceil(total),
-        // totalItems: total,
-        foods,
-      });
-    } catch (error) {
-      res.status(500).json({ error: "Failed to fetch foods" });
+exports.getAllFoods = asyncHandler(async (req, res) => {
+  try {
+    const { page = 1, limit = 10, category, orderType } = req.query;
+
+    const query = {};
+
+    if (category) {
+      query.category = category;
     }
-  });
+
+    if (orderType) {
+      query.orderType = orderType; // Matches items that include the given orderType
+    }
+
+    const total = await Food.countDocuments(query);
+    const foods = await Food.find(query)
+      .skip((page - 1) * limit)
+      .limit(parseInt(limit));
+
+    res.status(200).json({
+      success: true,
+      currentPage: +page,
+      totalPages: Math.ceil(total / limit),
+      totalItems: total,
+      foods,
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch foods" });
+  }
+});
+
 
   exports.getFoodById = asyncHandler(async(req, res) => {
     try {
