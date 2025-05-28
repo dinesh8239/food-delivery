@@ -11,13 +11,23 @@ const foodSchema = new Schema(
       enum: [
         "veg", "non-veg", "cold-drink", "dessert",
         "Korean Spicy Fest", "Bk Cafe", "Snacks",
+<<<<<<< HEAD
         "Whopper", "New Premium Burgers"
+=======
+        "Whopper", "New Premium Burgers", "Value Meals", "Best of Combos"
+>>>>>>> 52ed44e3 (feat: Add food category management functionality)
       ],
       required: true,
     },
     orderType: {
+<<<<<<< HEAD
       type: String,
       enum: ["delivery", "dine-in/takeaway"],
+=======
+      type: [String],
+      enum: ["delivery", "dine-in/takeaway"],
+      default: ["delivery", "dine-in/takeaway"],
+>>>>>>> 52ed44e3 (feat: Add food category management functionality)
       required: true,
     }
   },

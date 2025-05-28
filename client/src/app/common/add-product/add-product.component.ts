@@ -31,6 +31,7 @@ export class AddProductComponent {
       price: ['', Validators.required],
       // stock: ['', Validators.required],
       category: ['', Validators.required],
+      // orderType: ['', Validators.required],
       // brand: ['', Validators.required],
       description: [''],
       image: [null]
@@ -54,6 +55,7 @@ export class AddProductComponent {
     formData.append('name', this.productForm.get('name')?.value);
     formData.append('price', this.productForm.get('price')?.value);
     formData.append('category', this.productForm.get('category')?.value);
+    // formData.append('orderType', this.productForm.get('orderType')?.value);
     // formData.append('description', this.productForm.get('description')?.value);
     formData.append('image', this.image); // key must match multer config
   

@@ -7,15 +7,23 @@
     </a>
 
     <!-- Delivery Text -->
-    <div class="d-flex align-items-center gap-3">
-      <!-- <img src="assets/img/bk-logo.png" alt="BK Logo" width="40" /> -->
-      <span class="text-uppercase fw-bold" style="color: #ccc;">Delivery</span>
-      <div class="form-check form-switch">
-        <input class="form-check-input custom-toggle border-0" type="checkbox" id="dineToggle" checked>
-      </div>
-      
-      <span class="text-uppercase fw-bold" style="color: #5B2C06;">Dine-In/Takeaway</span>
-    </div>
+    <!-- Toggle Section -->
+<div class="d-flex align-items-center gap-3">
+  <span class="text-uppercase fw-bold" [style.color]="orderType === 'delivery' ? '#e76f00' : '#ccc'">Delivery</span>
+  
+  <div class="form-check form-switch">
+    <input
+      class="form-check-input custom-toggle border-0"
+      type="checkbox"
+      id="dineToggle"
+      [checked]="orderType === 'dine-in/takeaway'"
+    [routerLink]="['']"
+      (change)="toggleOrderType($event)">
+  </div>
+
+  <span class="text-uppercase fw-bold" [style.color]="orderType === 'dine-in/takeaway' ? '#5B2C06' : '#ccc'">Dine-In/Takeaway</span>
+</div>
+
     
     <!-- Search Bar -->
     <form class="d-flex mx-auto col-md-6">

@@ -12,4 +12,8 @@ export class ProductApiService {
   getProduct(api: string):Observable<any> {
     return this.http.get<any>(`http://localhost:5000/api/food?category=${api}`);
   }
+
+  getDelivery(api:string):Observable<any>{
+    return this.http.get<any>(api)
+  }
 }

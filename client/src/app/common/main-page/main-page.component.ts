@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 // import { SwiperSectionComponent } from '../swiper-section/swiper-section.component';
 // import { GridSwiperComponent } from '../grid-swiper/grid-swiper.component';
@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { RouterLink } from '@angular/router';
 import { SwiperComponent } from '../swiper/swiper.component';
+import { HttpClient } from '@angular/common/http';
 
  
 
@@ -19,7 +20,7 @@ import { SwiperComponent } from '../swiper/swiper.component';
 
 @Component({
   selector: 'app-main-page',
-  imports: [NavBarComponent,RouterLink,CardComponent,NavBarComponent,AddComponent,CommonModule, SwiperComponent],
+  imports: [NavBarComponent,RouterLink,CardComponent,NavBarComponent,CommonModule, SwiperComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css',
   animations: [
@@ -35,8 +36,11 @@ import { SwiperComponent } from '../swiper/swiper.component';
   ]
 
 })
-export class MainPageComponent{
+export class MainPageComponent implements OnInit{ 
  isOpen:boolean=false
+ orderType:'delivery' | 'dine-in/takeaway' = 'delivery'; // new variable
+ products: any[] = [];
+  constructor(private http: HttpClient) {}
  openSidebar(){
   this.isOpen=true
   console.log(this.isOpen)
@@ -45,4 +49,25 @@ export class MainPageComponent{
   this.isOpen=false
   console.log(this.isOpen)
 }
+
+ fetchCategories(): void {
+    this.http
+      .get<any>(`http://localhost:5000/api/food-categories?orderType=${this.orderType}`)
+      .subscribe((res: any) => {
+        this.products = res.data;
+      console.log('Fetched product:', this.products);
+      console.log('Fetching categories for order type:', this.orderType);
+
+
+      });
+      
+      
+  }
+
+  ngOnInit(): void {
+  this.orderType=  localStorage.getItem('orderType') === 'dine-in/takeaway' ? this.orderType = 'dine-in/takeaway' : this.orderType = 'delivery';
+   this.fetchCategories();
+      console.log('Fetching categories for order type:', this.orderType);
+
+  }
 }
