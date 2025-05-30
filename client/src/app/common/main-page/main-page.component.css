@@ -70,3 +70,35 @@
     font-weight: bold;
 
 }
+
+.custom-explore-btn {
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+/* Orange background */
+.btn-orange {
+  background-color: #f37000;
+}
+
+/* Brown background */
+.btn-brown {
+  background-color: #6b3c32;
+}
+
+/* Override hover completely to prevent "invisible" glitch */
+.btn-orange:hover {
+  background-color: #d95e00; /* slightly darker orange */
+  color: white;
+}
+
+.btn-brown:hover {
+  background-color: #5a2e28; /* slightly darker brown */
+  color: white;
+}
+
+

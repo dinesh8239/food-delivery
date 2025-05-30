@@ -20,10 +20,9 @@ console.log("File:", req.file);
     const image = req.file?.path; // Cloudinary image URL
 
 
-    if (!name || !category || !price || !image || !orderType) {
 
     if (!name || !category || !price || !image) {
-      throw new ApiError(400, "All fields are required including orderType");
+      throw new ApiError(400, "All fields are required");
     }
 
     // Ensure orderType is always an array
@@ -43,7 +42,7 @@ console.log("File:", req.file);
     return res.status(201).json(
       new ApiResponse("Food Item created successfully", food)
     );
-  } }catch (error) {
+   }catch (error) {
     throw new ApiError(500, error?.message || "Something went wrong while creating Food Item");
   }
 });
