@@ -50,21 +50,21 @@ export class AddProductComponent {
       alert('Please fill all fields and select an image.');
       return;
     }
-  
+
     const formData = new FormData();
     formData.append('name', this.productForm.get('name')?.value);
     formData.append('price', this.productForm.get('price')?.value);
     formData.append('category', this.productForm.get('category')?.value);
-    // formData.append('orderType', this.productForm.get('orderType')?.value);
+    formData.append('orderType', this.productForm.get('orderType')?.value);
     // formData.append('description', this.productForm.get('description')?.value);
     formData.append('image', this.image); // key must match multer config
-  
+
     this.uploading = true;
-  
+
     // Get token from localStorage (or from AuthService)
     const token = localStorage.getItem('token');
     console.log("Token being sent:", token); // Add this
-      
+
     this.http.post('http://localhost:5000/api/food', formData).subscribe({
       next: (res) => {
         console.log('Product created:', res);
@@ -80,6 +80,6 @@ export class AddProductComponent {
         this.uploading = false;
       }
     });
-    
+
   }
 }
